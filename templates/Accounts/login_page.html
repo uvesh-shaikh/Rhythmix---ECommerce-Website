@@ -1,0 +1,91 @@
+{% extends "Base/base.html" %} 
+{%block start%}
+{% load socialaccount %}
+
+
+  <!-- <form class="container" method="post" >
+      {% csrf_token %}
+      {%include 'base/alert.html'%}
+      <div class="form-group">
+
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary my-2">Submit</button>
+    </form> -->
+    <!-- {%include 'base/alert.html'%} -->
+  <div class="container mt-5" style="height: 74.7vh;">
+    
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="mb-3">
+          <h3>Login</h3>
+        </div>
+        <form accept="" class="shadow p-4" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="username">Email/Username</label>
+            <!-- <input type="email" class="form-control" name="username" id="username" placeholder="Username"> -->
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+          </div>
+          <div class="mb-3">
+            <label for="Password">Password</label>
+            <!-- <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="Password"
+              placeholder="Password"
+            /> -->
+
+          <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+        />
+          </div>
+
+          <!-- <label class="mb-3">
+            <input type="checkbox" name="RememberMe" /> Remember Me
+          </label> -->
+
+          <!-- <a href="#" class="float-end text-decoration-none">Reset Password</a> -->
+
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+
+          <hr />
+
+          <p class="text-center mb-0">
+            If you do not have account. <a href="{% url 'register' %}">Register Now</a>
+          </p>
+          <p class="text-center mb-0">
+            <a href="{% provider_login_url 'google'%}?next=/">Signin with Google</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
